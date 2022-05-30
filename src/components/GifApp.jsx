@@ -3,8 +3,8 @@ import { useState } from 'react'
 import AgregarBusqueda from './AgregarBusqueda';
 import GifContenedor from './GifContenedor';
 
-const GifApp = () => {
-    const [categoriasBusqueda, setCategoriasBusqueda] = useState(['simpson']);
+const GifApp = ({categorias = ['simpson']}) => {
+    const [categoriasBusqueda, setCategoriasBusqueda] = useState(categorias);
   return (
     <>
     <div>Aplicación de Gifs</div>

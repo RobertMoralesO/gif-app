@@ -9,11 +9,16 @@ const AgregarBusqueda = ({setCategoriasBusqueda}) => {
 
     const buscar = (e)=>{
         e.preventDefault();
-        setCategoriasBusqueda(valores => [valorBusqueda, ...valores])
-        setValorBusqueda('')
+
+        if (valorBusqueda.trim().length > 0){
+          setCategoriasBusqueda(valores => [valorBusqueda, ...valores])
+          setValorBusqueda('')
+        }
+        
     }
 
   return (
+    <>
     <form onSubmit={buscar}>
        <input
        type='text'
@@ -21,6 +26,8 @@ const AgregarBusqueda = ({setCategoriasBusqueda}) => {
        onChange={cambiarValorBusqueda}
        />
     </form>
+    <p>{valorBusqueda}</p>
+    </>
   )
 }
 
