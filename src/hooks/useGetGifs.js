@@ -16,7 +16,7 @@ export const useGetGifs = (valorBusqueda) => {
                     gifs: gifs,
                     cargando: false
                 });
-            }), 3000)
+            }), 5)
     },[valorBusqueda])
 
     return estado;
